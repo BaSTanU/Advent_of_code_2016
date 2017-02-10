@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int mat[10][27];
+
+int main()
+{
+    char sir[100];
+    char mesaj[10];
+    int cnt = 0;
+
+    freopen("data.in", "r", stdin);
+
+    while (gets(sir)) {
+        for (int i = 0; sir[i]; ++ i)
+            ++ mat[i][sir[i] - 'a'];
+    }
+
+    for (int i = 0; i < 8; ++ i) {
+        int minim = mat[i][0];
+        char c = 'a';
+
+        for (int j = 0; j < 'z' - 'a'; ++ j)
+            if (mat[i][j] < minim) {
+                minim = mat[i][j];
+                c = j + 'a';
+            }
+
+        mesaj[cnt ++] = c;
+    }
+
+    mesaj[cnt] = '\0';
+
+    puts(mesaj);
+
+    return 0;
+}
