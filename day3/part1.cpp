@@ -4,17 +4,17 @@ using namespace std;
 
 int main()
 {
-    freopen("data.in", "r", stdin);
+    ifstream fin("data.in");
 
     int a, b, c;
     int nr = 0;
 
-    while (cin >> a >> b >> c) {
+    while (fin >> a >> b >> c) {
         if (a + b > c && b + c > a && a + c > b)
             nr ++;
     }
 
-    printf("%d\n", nr);
+    cout << "The answer for part1 is: " << nr << "\n";
 
     return 0;
 }

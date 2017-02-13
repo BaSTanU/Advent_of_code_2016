@@ -4,12 +4,12 @@ using namespace std;
 
 int main()
 {
-    freopen("data.in", "r", stdin);
+    ifstream fin("data.in");
 
     int a, b, c, d, e, f, g, h, i;
     int nr = 0;
 
-    while (cin >> a >> b >> c >> d >> e >> f >> g >> h >> i) {
+    while (fin >> a >> b >> c >> d >> e >> f >> g >> h >> i) {
         if (a + d > g && d + g > a && a + g > d)
             nr ++;
 
@@ -20,7 +20,7 @@ int main()
             nr ++;
     }
 
-    printf("%d\n", nr);
+    cout << "The answer for part2 is: " << nr << "\n";
 
     return 0;
 }
